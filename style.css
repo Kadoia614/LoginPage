@@ -1,0 +1,126 @@
+*{padding: 0; margin: 0; border: 0; box-sizing: border-box;}
+
+body{
+    background: #DDD;
+}
+
+main .hiden{
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
+    padding: 2em;
+    border-radius: 5px;
+    width: 350px;
+
+    z-index: 999;
+    display: none;
+}
+
+.show{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .4);
+    padding: 2em;
+    border-radius: 5px;
+    width: 350px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    position: absolute;
+    animation-name: example;
+    animation-duration: 0.5s;
+    background: #FFF;
+
+}
+
+
+@keyframes example {
+    0%{width: 0px;  height: 0px;color: transparent;}
+    50%{color: transparent;}
+    100% {width: 350px;    height: 346px;}
+  }
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    position:relative;
+    font-weight: 600;
+    margin-bottom: .8em;
+
+}
+main h1::before{
+    position: absolute;
+    content: '';
+    background: rgba(0, 0, 0, .4);
+    height: 1px;
+    width: 100%;
+    top: 1.7em;
+}
+
+main .input-field{
+    position: relative;
+}
+
+main input{
+    width: 100%;
+    padding: .5em 0;
+    border-radius: 3px;
+    outline: none;
+}
+main input::placeholder{
+    font-size: .9em;
+}
+
+main input:not([type="submit"]){
+    margin-bottom: .5em;
+}
+
+main input[type="submit"]{
+    font-weight: 700;
+    font-size: .9rem;
+    color: #FFF;
+    background: #4d10af;
+    margin-top: .5em;
+}
+
+.underline::after{
+    content: '';
+    height: 1px;
+    width: 0%;
+    background: rgba(0, 0, 0, .4);
+    top: 2em;
+    position: absolute;
+    transition: .5s;
+}
+
+main input:focus ~ .underline::after{
+    width: 100%;
+
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: .5em;
+}
+span{
+    margin-top: .5em;
+}
+
+.footer a{
+    cursor: pointer;
+}
+
+.button{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .9);
+    border-top: 2px solid #DDD;
+    border-left: 2px solid #DDD;
+    cursor: pointer;
+    background-color: #4d10af;
+
+}
